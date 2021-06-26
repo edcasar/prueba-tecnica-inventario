@@ -23,7 +23,7 @@ class Producto
 		}
 	}
 
-	public function mostrarProductos()
+	public function MostrarProductos()
 	{
 		try{
 			$result = array();
@@ -37,17 +37,31 @@ class Producto
 		}
 	}
 
-	public function eliminarProducto()
+	public function getting($id)
+	{
+		try {
+			$stm = $this->pdo->prepare("SELECT * FROM productos WHERE id = ?");
+			$stm->execute(array($id));
+
+			return $stm->fetch(PDO::FETCH_OBJ);
+		}
+	   	catch (Exception $err) 
+		{
+			die($err->getMessage());
+		}
+	}
+
+	public function EliminarProducto()
 	{
 		
 	}
 
-	public function actualizarProducto()
+	public function ActualizarProducto()
 	{
 		
 	}
 	
-	public function crearProducto()
+	public function CrearProducto()
 	{
 		
 	}
