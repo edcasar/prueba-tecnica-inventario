@@ -10,7 +10,7 @@
 <body>
     <h1><?php echo $alm->id != null ? $alm->nombre_producto : 'Crear Producto'?></h1>
     <a href="?controller=Producto">Volver</a>
-    <form action="?controller=Producto&accion=Guardar" method="post" >
+    <form class="form" action="?controller=Producto&accion=Guardar" method="post" >
      	<input type="hidden" name="id" value="<?php echo $alm->id; ?>">
     	<input type="text" placeholder="Nombre del producto: " name="nombre_producto" value="<?php echo $alm->nombre_producto; ?>">
     	<input type="text" placeholder="Referencia: " name="referencia" value="<?php echo $alm->referencia;?>">

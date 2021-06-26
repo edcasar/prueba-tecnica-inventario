@@ -12,7 +12,7 @@
 	    <h1>Lista de productos</h1>
         <button><a href="?controller=Producto&accion=Crud">Crear Producto</a></button>
     </div>
-	<table>
+	<table class="main-table">
 		<thead>
 			<tr>
 				<th>Nombre</th>

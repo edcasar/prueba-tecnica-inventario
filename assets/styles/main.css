@@ -1,4 +1,22 @@
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
+}
+.main-table {
+  width: 80%;
+  margin: auto;
+  font-size: 1.2rem;
+}
+.main-table tbody tr:nth-child(odd)  {
+	background: #0fa;
+}
+.main-table tbody tr td {
+	padding: .5rem;
+	text-align: center;
+}
+
+.form{
+	width: 80%;
+	display: flex;
+	flex-direction: column;
 }
