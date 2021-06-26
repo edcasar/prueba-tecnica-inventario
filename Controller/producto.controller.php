@@ -17,7 +17,7 @@ class ProductoController
         $alm = new Producto();
         
         if(isset($_REQUEST['id'])){
-            $alm = $this->model->getting($_REQUEST['id']);
+            $alm = $this->model->getProducto($_REQUEST['id']);
         }
         
         require_once 'View/producto-editar.php';

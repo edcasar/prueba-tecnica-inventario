@@ -37,7 +37,7 @@ class Producto
 		}
 	}
 
-	public function getting($id)
+	public function getProducto($id)
 	{
 		try {
 			$stm = $this->pdo->prepare("SELECT * FROM productos WHERE id = ?");
@@ -51,8 +51,17 @@ class Producto
 		}
 	}
 
-	public function EliminarProducto()
+	public function EliminarProducto($id)
 	{
+		echo "Entrndo al eliminarodr";
+		try {
+			$stm = $this->pdo->prepare("DELETE FROM productos WHERE id = ?");			          
+
+			$stm->execute(array($id));
+		} 
+		catch (exception $err) {
+			die($err->getmessage());
+		}
 		
 	}
 
