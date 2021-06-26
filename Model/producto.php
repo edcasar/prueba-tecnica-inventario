@@ -10,7 +10,6 @@ class Producto
 	public $peso;
 	public $categoria;
 	public $stock;
-	public $fecha_ultima_venta;
 
 	public function __CONSTRUCT()
 	{
@@ -64,14 +63,60 @@ class Producto
 		}
 		
 	}
-
-	public function ActualizarProducto()
+    public function ActualizarProducto($data)
 	{
+		try 
+		{
+			$sql = "UPDATE productos SET 
+						nombre_producto = ?, 
+						referencia = ?,
+                        precio = ?,
+						peso = ?, 
+						categoria = ?,
+                        stock = ?
+				    WHERE id= ?";
+
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array(
+                        $data->id, 
+                        $data->nombre_producto, 
+                        $data->referencia,
+                        $data->precio,
+                        $data->peso,
+                        $data->categoria,
+                        $data->stock
+					)
+				);
+		} catch (Exception $err) 
+		{
+			die($err->getMessage());
+		}
 		
 	}
 	
-	public function CrearProducto()
+	public function CrearProducto($data)
 	{
+		try 
+		{
+		$sql = "INSERT INTO `productos` (nombre_producto, referencia, precio,peso, categoria, stock) 
+		        VALUES (?, ?, ?, ?, ?, ?)";
+
+		$this->pdo->prepare($sql)
+		     ->execute(
+				    array(
+                        $data->nombre_producto, 
+                        $data->referencia,
+                        $data->precio,
+                        $data->peso,
+                        $data->categoria,
+                        $data->stock
+					)
+			);
+		} catch (Exception $err) 
+		{
+			die($err->getMessage());
+		}
 		
 	}
 

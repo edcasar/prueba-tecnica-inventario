@@ -17,7 +17,7 @@
     	<input type="number" placeholder="Precio" name="precio" value="<?php echo $alm->precio;?>">
     	<input type="number" placeholder="Peso (kg): " name="peso" value="<?php echo $alm->peso;?>">
     	<input type="text" placeholder="Categoria:" name="categoria" value="<?php echo $alm->categoria;?>">
-    	<input type="text" placeholder="Stock: " name="stock" value="<?php echo $alm->stock;?>">
+    	<input type="number" placeholder="Stock: " name="stock" value="<?php echo $alm->stock;?>">
         <button>GUARDAR</button>
     </form>
 </body>

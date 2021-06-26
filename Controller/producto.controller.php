@@ -33,7 +33,6 @@ class ProductoController
 		$alm->peso = $_REQUEST['peso'];
 		$alm->categoria = $_REQUEST['categoria'];
 		$alm->stock = $_REQUEST['stock'];
-		$alm->fecha_ultima_venta = $_REQUEST['fecha_ultima_venta'];
 
         //si el id es mayor a 0 significa que hareos una actualizacion, de lo contrario se creara el producto e la base de datos
         $alm->id > 0 
