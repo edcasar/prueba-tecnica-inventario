@@ -8,10 +8,8 @@
 	<title>Inventarios de productos</title>
 </head>
 <body>
-    <div>
-	    <h1>Lista de productos</h1>
-        <button><a href="?controller=Producto&accion=Crud">Crear Producto</a></button>
-    </div>
+	<h1>Lista de productos</h1>
+    <button class="links"><a href="?controller=Producto&accion=Crud">Crear Producto</a></button>
 	<table class="main-table">
 		<thead>
 			<tr>
@@ -23,16 +21,18 @@
 				<th>Stock</th>
 				<th>Fecha creación</th>
 				<th>Fecha ultima venta</th>
+                <th></th>
+                <th></th>
 			</tr>
 		</thead>
         <tbody>
         <?php foreach($this->model->MostrarProductos() as $product ): ?>
             <tr>
-				<td><?php echo $product->nombre_producto ?></td>
+				<td><?php echo strtoupper($product->nombre_producto) ?></td>
 				<td><?php echo $product->referencia ?></td>
 				<td><?php echo $product->precio ?></td>
 				<td><?php echo $product->peso ?></td>
-				<td><?php echo $product->categoria ?></td>
+				<td><?php echo strtolower($product->categoria) ?></td>
 				<td><?php echo $product->stock ?></td>
 				<td><?php echo $product->fecha_creacion?></td>
 				<td><?php echo isset($product->fecha_ultima_venta) ? $product->fecha_ultima_venta : "Sin ventas"?></td>

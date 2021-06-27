@@ -44,8 +44,7 @@ class Producto
 
 			return $stm->fetch(PDO::FETCH_OBJ);
 		}
-	   	catch (Exception $err) 
-		{
+	   	catch (Exception $err) {
 			die($err->getMessage());
 		}
 	}
@@ -67,7 +66,7 @@ class Producto
 	{
 		try 
 		{
-			$sql = "UPDATE productos SET 
+			$sql = "UPDATE `productos` SET 
 						nombre_producto = ?, 
 						referencia = ?,
                         precio = ?,
@@ -76,16 +75,15 @@ class Producto
                         stock = ?
 				    WHERE id= ?";
 
-			$this->pdo->prepare($sql)
-			     ->execute(
-				    array(
-                        $data->id, 
+			$stm = $this->pdo->prepare($sql);
+			 $stm->execute(array(
                         $data->nombre_producto, 
                         $data->referencia,
                         $data->precio,
                         $data->peso,
                         $data->categoria,
-                        $data->stock
+                        $data->stock,
+                        $data->id, 
 					)
 				);
 		} catch (Exception $err) 
@@ -102,9 +100,8 @@ class Producto
 		$sql = "INSERT INTO `productos` (nombre_producto, referencia, precio,peso, categoria, stock) 
 		        VALUES (?, ?, ?, ?, ?, ?)";
 
-		$this->pdo->prepare($sql)
-		     ->execute(
-				    array(
+			$stm = $this->pdo->prepare($sql);
+            $stm->execute(array(
                         $data->nombre_producto, 
                         $data->referencia,
                         $data->precio,

@@ -1,5 +1,5 @@
 const confirmar = e => {
-	if (confirm('¿Estás seguro que quieres eliminar este usuario?')) {
+	if (confirm('Se eliminará el producto ¿Estás seguro?')) {
 		return true;
 	} else {
 		e.preventDefault();

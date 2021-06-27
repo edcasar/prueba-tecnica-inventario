@@ -4,12 +4,14 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="" />
-	<link rel="" href="" />
+	<link rel="stylesheet" href="assets/styles/main.css" />
 	<title>Producto</title>
 </head>
 <body>
     <h1><?php echo $alm->id != null ? $alm->nombre_producto : 'Crear Producto'?></h1>
-    <a href="?controller=Producto">Volver</a>
+    <button class="links">
+        <a href="?controller=Producto">Volver</a>
+    </button>
     <form class="form" action="?controller=Producto&accion=Guardar" method="post" >
      	<input type="hidden" name="id" value="<?php echo $alm->id; ?>">
     	<input type="text" placeholder="Nombre del producto: " name="nombre_producto" value="<?php echo $alm->nombre_producto; ?>">
